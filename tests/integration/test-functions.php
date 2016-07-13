@@ -15,7 +15,11 @@ class FunctionsTest extends WP_UnitTestCase {
      * @covers sts()
      */
     public function test_sts() {
+
+        unset( $GLOBALS['sts'] );
+
         $this->assertTrue( is_a( sts(), 'Simple_Taxonomy_Search' ) );
+        
     }
 
 }
