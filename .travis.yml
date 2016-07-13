@@ -1,8 +1,10 @@
+sudo: false
+
 language: php
 
 notifications:
   email:
-    on_success: never
+    on_success: change
     on_failure: change
 
 branches:
@@ -23,8 +25,6 @@ env:
   - WP_VERSION=4.3 WP_MULTISITE=0
   - WP_VERSION=4.2 WP_MULTISITE=0
   - WP_VERSION=4.1 WP_MULTISITE=0
-  - WP_VERSION=4.0 WP_MULTISITE=0
-  - WP_VERSION=3.9 WP_MULTISITE=0
 
 before_script:
   - bash bin/install-wp-tests.sh sts_unit_tests root '' localhost $WP_VERSION
