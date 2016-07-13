@@ -16,7 +16,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $sts = new Simple_Taxonomy_Search();
         $sts->append_callbacks();
-
+        
         $posts_join_tag = _wp_filter_build_unique_id( 'posts_join', array( $sts, 'posts_join' ), 10 );
         $this->assertarrayHasKey( $posts_join_tag, $wp_filter['posts_join'][10] );
 
@@ -86,7 +86,6 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         global $wp_query, $wp_the_query;
 
-        //* will set is_main_query() to true
         $wp_the_query = $wp_query;
 
         $sts  = new Simple_Taxonomy_Search();
@@ -121,13 +120,8 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         global $wp_query, $wp_the_query, $wpdb;
 
-        //* will set is_main_query() to true
         $wp_the_query = $wp_query;
-
-        //* will set is_search() to true
         $wp_the_query->is_search = true;
-
-        //* set a search value
         $wp_the_query->query_vars['s'] = 'sample';
 
         $sts        = new Simple_Taxonomy_Search();
@@ -151,10 +145,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         global $wp_the_query;
 
-        //* will set is_search() to true
         $wp_the_query->is_search = true;
-
-        //* set a search value
         $wp_the_query->query_vars['s'] = 'sample';
 
         $sts      = new Simple_Taxonomy_Search();
@@ -174,7 +165,6 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         global $wp_query, $wp_the_query;
 
-        //* will set is_main_query() to true
         $wp_the_query = $wp_query;
 
         $sts      = new Simple_Taxonomy_Search();
@@ -211,13 +201,8 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         global $wp_query, $wp_the_query, $wpdb;
 
-        //* will set is_main_query() to true
         $wp_the_query = $wp_query;
-
-        //* will set is_search() to true
         $wp_the_query->is_search = true;
-
-        //* set a search value
         $wp_the_query->query_vars['s'] = 'sample';
 
         $sts      = new Simple_Taxonomy_Search();
@@ -237,10 +222,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         global $wp_the_query;
 
-        //* will set is_search() to true
         $wp_the_query->is_search = true;
-
-        //* set a search value
         $wp_the_query->query_vars['s'] = 'sample';
 
         $sts      = new Simple_Taxonomy_Search();
@@ -260,7 +242,6 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         global $wp_query, $wp_the_query;
 
-        //* will set is_main_query() to true
         $wp_the_query = $wp_query;
 
         $sts      = new Simple_Taxonomy_Search();
