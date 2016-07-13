@@ -65,7 +65,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_join_not_is_main_query() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_the_query;
 
         //* will set is_search() to true
         $wp_the_query->is_search = true;
@@ -84,7 +84,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_join_not_is_search() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_query, $wp_the_query;
 
         //* will set is_main_query() to true
         $wp_the_query = $wp_query;
@@ -103,7 +103,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_join_not_is_search_not_is_main_query() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_the_query;
 
         $sts  = new Simple_Taxonomy_Search();
         $join = '';
@@ -149,7 +149,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_where_not_is_main_query() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_the_query;
 
         //* will set is_search() to true
         $wp_the_query->is_search = true;
@@ -172,7 +172,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_where_not_is_search() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_query, $wp_the_query;
 
         //* will set is_main_query() to true
         $wp_the_query = $wp_query;
@@ -192,7 +192,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_where_not_is_main_query_not_is_search() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_the_query;
 
         $sts      = new Simple_Taxonomy_Search();
         $where    = '';
@@ -235,7 +235,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_groupby_not_is_main_query() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_the_query;
 
         //* will set is_search() to true
         $wp_the_query->is_search = true;
@@ -258,7 +258,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_groupby_not_is_search() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_query, $wp_the_query;
 
         //* will set is_main_query() to true
         $wp_the_query = $wp_query;
@@ -278,7 +278,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
      */
     public function test_posts_groupby_not_is_main_query_and_not_is_search() {
 
-        global $wp_query, $wp_the_query, $wpdb;
+        global $wp_the_query;
 
         $sts      = new Simple_Taxonomy_Search();
         $groupby  = '';
