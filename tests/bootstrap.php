@@ -23,7 +23,12 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
  * @return void
  */
 function _manually_load_plugin() {
+
+    //* set dummy value to prevent sts() from automatically loading
+    $GLOBALS['sts'] = 1;
+
     require( dirname( dirname( __FILE__ ) ) . '/simple-taxonomy-search.php' );
+    
 }
 
 //* start up the WP testing environment.
