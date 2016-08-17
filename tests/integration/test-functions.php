@@ -19,7 +19,7 @@ class FunctionsTest extends WP_UnitTestCase {
         unset( $GLOBALS['sts'] );
 
         $this->assertTrue( is_a( sts(), 'Simple_Taxonomy_Search' ) );
-        
+
     }
 
 }

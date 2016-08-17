@@ -28,7 +28,7 @@ function _manually_load_plugin() {
     $GLOBALS['sts'] = 1;
 
     require( dirname( dirname( __FILE__ ) ) . '/simple-taxonomy-search.php' );
-    
+
 }
 
 //* start up the WP testing environment.

@@ -8,7 +8,7 @@
  * Plugin URI: https://www.rfmeier.net/
  * Text Domain: simple-taxonomy-search
  * Domain Path: /languages
- * 
+ *
  * @package Simple_Taxonomy_Search
  */
 

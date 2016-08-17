@@ -16,7 +16,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $sts = new Simple_Taxonomy_Search();
         $sts->append_callbacks();
-        
+
         $posts_join_tag = _wp_filter_build_unique_id( 'posts_join', array( $sts, 'posts_join' ), 10 );
         $this->assertarrayHasKey( $posts_join_tag, $wp_filter['posts_join'][10] );
 
@@ -44,14 +44,14 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
         $sts      = new Simple_Taxonomy_Search();
         $join     = '';
         $expected = "
-                LEFT JOIN 
-                ( 
+                LEFT JOIN
+                (
                     `{$wpdb->term_relationships}`
-                    INNER JOIN 
-                        `{$wpdb->term_taxonomy}` ON `{$wpdb->term_taxonomy}`.term_taxonomy_id = `{$wpdb->term_relationships}`.term_taxonomy_id 
-                    INNER JOIN 
-                        `{$wpdb->terms}` ON `{$wpdb->terms}`.term_id = `{$wpdb->term_taxonomy}`.term_id 
-                ) 
+                    INNER JOIN
+                        `{$wpdb->term_taxonomy}` ON `{$wpdb->term_taxonomy}`.term_taxonomy_id = `{$wpdb->term_relationships}`.term_taxonomy_id
+                    INNER JOIN
+                        `{$wpdb->terms}` ON `{$wpdb->terms}`.term_id = `{$wpdb->term_taxonomy}`.term_id
+                )
                 ON `{$wpdb->posts}`.ID = `{$wpdb->term_relationships}`.object_id ";
 
         $join = $sts->posts_join( $join, $wp_the_query );
@@ -72,7 +72,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $sts  = new Simple_Taxonomy_Search();
         $join = '';
-        
+
         $join = $sts->posts_join( $join, $wp_the_query );
 
         $this->assertEquals( '', $join );
@@ -90,7 +90,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $sts  = new Simple_Taxonomy_Search();
         $join = '';
-        
+
         $join = $sts->posts_join( $join, $wp_the_query );
 
         $this->assertEquals( '', $join );
@@ -106,7 +106,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $sts  = new Simple_Taxonomy_Search();
         $join = '';
-        
+
         $join = $sts->posts_join( $join, $wp_the_query );
 
         $this->assertEquals( '', $join );
@@ -127,14 +127,14 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
         $sts        = new Simple_Taxonomy_Search();
         $where      = '';
         $expected   = " OR (
-                            `{$wpdb->term_taxonomy}`.taxonomy IN( 'category', 'post_tag' ) 
+                            `{$wpdb->term_taxonomy}`.taxonomy IN( 'category', 'post_tag' )
                             AND
                             `{$wpdb->terms}`.name LIKE '%" . esc_sql( get_query_var( 's' ) ) . "%'
                         )";
 
         $where = $sts->posts_where( $where, $wp_the_query );
 
-        $this->assertEquals( $expected, $where );                      
+        $this->assertEquals( $expected, $where );
 
     }
 
@@ -154,7 +154,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $where = $sts->posts_where( $where, $wp_the_query );
 
-        $this->assertEquals( $expected, $where );                      
+        $this->assertEquals( $expected, $where );
 
     }
 
@@ -173,7 +173,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $where = $sts->posts_where( $where, $wp_the_query );
 
-        $this->assertEquals( $expected, $where );                      
+        $this->assertEquals( $expected, $where );
 
     }
 
@@ -190,7 +190,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $where = $sts->posts_where( $where, $wp_the_query );
 
-        $this->assertEquals( $expected, $where );                      
+        $this->assertEquals( $expected, $where );
 
     }
 
@@ -211,7 +211,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $groupby = $sts->posts_groupby( $groupby, $wp_the_query );
 
-        $this->assertEquals( $expected, $groupby );                      
+        $this->assertEquals( $expected, $groupby );
 
     }
 
@@ -231,7 +231,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $groupby = $sts->posts_groupby( $groupby, $wp_the_query );
 
-        $this->assertEquals( $expected, $groupby );                      
+        $this->assertEquals( $expected, $groupby );
 
     }
 
@@ -250,7 +250,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $groupby = $sts->posts_groupby( $groupby, $wp_the_query );
 
-        $this->assertEquals( $expected, $groupby );                      
+        $this->assertEquals( $expected, $groupby );
 
     }
 
@@ -267,7 +267,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
 
         $groupby = $sts->posts_groupby( $groupby, $wp_the_query );
 
-        $this->assertEquals( $expected, $groupby );                      
+        $this->assertEquals( $expected, $groupby );
 
     }
 
@@ -277,7 +277,7 @@ class Class_Simple_Taxonomy_Search_Test extends WP_UnitTestCase {
     public function test_posts_where_taxonomies() {
 
         $sts = new Simple_Taxonomy_Search();
-        
+
         $this->assertEquals( array( "'category'", "'post_tag'" ), $sts->posts_where_taxonomies() );
 
     }

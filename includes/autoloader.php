@@ -15,7 +15,7 @@ spl_autoload_register( 'sts_autoloader' );
  * @see http://php.net/manual/en/function.spl-autoload-register.php
  *
  * @since 1.0.0
- * 
+ *
  * @param  string $class The class name.
  * @return void
  */
