@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Simple Taxonomy Search
- * Version: 1.0.0
+ * Version: 1.0.1
  * Description: Extend WordPress searches in search aginst taxonomy terms.
  * Author: Ryan Meier
  * Author URI: https://www.rfmeier.net/
