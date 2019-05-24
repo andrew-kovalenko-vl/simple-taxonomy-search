@@ -55,7 +55,7 @@ class Simple_Taxonomy_Search {
 
         global $wpdb;
 
-        if ( is_main_query() && is_search() ) {
+        if ( $query->is_main_query() && $query->is_search() ) {
 
             $join .= "
                 LEFT JOIN
@@ -94,7 +94,7 @@ class Simple_Taxonomy_Search {
 
         global $wpdb;
 
-        if ( is_main_query() && is_search() ) {
+        if ( $query->is_main_query() && $query->is_search() ) {
 
             $taxonomies = $this->posts_where_taxonomies();
             $taxonomies = implode( ', ', $taxonomies );
@@ -130,7 +130,7 @@ class Simple_Taxonomy_Search {
 
         global $wpdb;
 
-        if ( is_main_query() && is_search() ) {
+        if ( $query->is_main_query() && $query->is_search() ) {
             $groupby = "`{$wpdb->posts}`.ID";
         }
 
